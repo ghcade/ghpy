@@ -27,6 +27,7 @@ pip install wheel
 pip install pyproject-toml
 pip install -r requirements.txt
 ```
+\* 依序以上指令安裝
 \* requirements.txt中 lxml 套件安裝依照存放路徑設定(預設為 file:///C:/ghpy/software/lxml-4.9.0-cp311-cp311-win_amd64.whl)  
   
 Step 2. 安裝 Chrome 瀏覽器  
