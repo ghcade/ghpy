@@ -20,12 +20,26 @@ python 3.11.1 (All User, 預設安裝路徑會在C:\Program Files\Python311)
 3. 其他
 * pyproject-toml
 * wheel
+## 使用
+Step 1. 安裝相依套件
+```
+pip install wheel
+pip install pyproject-toml
+pip install -r requirements.txt
+```
+* requirements.txt中 lxml 套件安裝依照存放路徑設定(預設為 file:///C:/ghpy/software/lxml-4.9.0-cp311-cp311-win_amd64.whl)
+Step 2. 安裝 Chrome 瀏覽器
+Step 3. 使用
+```
+python ghpy.py -u <目表Host/IP> -t <輸出檔案格式>
+```
+* 輸出檔案格式預設為 xlsx
 ## 備註
 [1] python-docx error : 依環境[下載](https://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml) lxml  
 例：Windows 10 x 64 選 lxml‑4.9.0‑cp311‑cp311‑win_amd64.whl  
 Install  
 ```
-pip lxml-4.9.0-cp311-cp311-win_amd64.whl
+pip install lxml-4.9.0-cp311-cp311-win_amd64.whl
 ```
 [2] path warning : 環境變數加入 path
 ```
