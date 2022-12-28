@@ -1,0 +1,31 @@
+﻿安裝環境 :
+Windows 10 x 64
+python版本3.11.1 (All User, 預設安裝路徑會在C:\Program Files\Python311)
+
+GHPD 相依套件 : 
+#網頁爬蟲相關
+selenium
+beautifulsoup4
+requests
+#檔案分析相關(docx, xlsx, pdf ...)
+pandas
+xlrd
+pdfminer.six
+pypiwin32
+openpyxl
+python-pptx
+python-docx
+#其他
+wheel
+pyproject-toml
+
+
+備註:
+[1]
+python-docx 會報錯，需手動安裝lxml對應版本
+https://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml
+EX. win10x64 pyton3.11 選lxml‑4.9.0‑cp311‑cp311‑win_amd64.whl
+pip install C:\Users\Cade\Downloads\lxml-4.9.0-cp311-cp311-win_amd64.whl
+[2]
+安裝套件會有" WARNING: The script f2py.exe is installed in 'C:\Users\Cade\AppData\Roaming\Python\Python311\Scripts' which is not on PATH."
+相關警告，需再進階設定將環境變數中加入PATH
