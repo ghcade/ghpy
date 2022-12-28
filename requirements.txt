@@ -9,7 +9,7 @@ et-xmlfile==1.1.0
 h11==0.14.0
 idna==3.4
 jsonschema==4.17.3
-lxml @ file:///C:/GHPY/lxml-4.9.0-cp311-cp311-win_amd64.whl
+lxml @ file:///C:/GHPY/software/lxml-4.9.0-cp311-cp311-win_amd64.whl
 numpy==1.24.1
 openpyxl==3.0.10
 outcome==1.2.0
