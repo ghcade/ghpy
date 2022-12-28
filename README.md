@@ -29,6 +29,6 @@ pip lxml-4.9.0-cp311-cp311-win_amd64.whl
 ```
 [2] path warning : 環境變數加入 path
 ```
-WARNING: The script f2py.exe is installed in 'C:\Users\Cade\AppData\Roaming\Python\Python311\Scripts' which is not on PATH.
+WARNING: The script xxx.exe is installed in 'C:\Users\XXXX\AppData\Roaming\Python\Python311\Scripts' which is not on PATH.
 ```
 [3] 環境所需軟體/套件在 software
