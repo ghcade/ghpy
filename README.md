@@ -2,7 +2,7 @@
 ## 安裝環境
 Windows 10 x 64  
 python 3.11.1 (All User, 預設安裝路徑會在C:\Program Files\Python311)  
-C108.0.5359.125  
+Chrome 108.0.5359.125  
 ## Python相依套件
 1. 網頁爬蟲相關
 * beautifulsoup4
