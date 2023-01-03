@@ -39,8 +39,7 @@ python ghpy.py -u <目表Host/IP> -t <輸出檔案格式>
 \* 輸出檔案格式預設為 xlsx  
 ## 備註
 [1] python-docx error : 依環境[下載](https://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml) lxml  
-  例：Windows 10 x 64 選 lxml‑4.9.0‑cp311‑cp311‑win_amd64.whl  
-  Install  
+  例：Windows 10 x 64 選 lxml‑4.9.0‑cp311‑cp311‑win_amd64.whl   
 ```
 pip install lxml-4.9.0-cp311-cp311-win_amd64.whl
 ```
