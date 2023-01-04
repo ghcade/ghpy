@@ -7,6 +7,7 @@ import docx
 import csv
 import os
 import sys
+import pythoncom
 
 sys.tracebacklimit = 0
 
@@ -38,17 +39,18 @@ def read_pdf(pdf_path):
 
 
 def read_docx(docx_path):
+    pythoncom.CoInitialize()
     try:
         tmp_path = './tmp/doc_tmp.txt'
         file = docx.Document(docx_path)
         tf = open(tmp_path, 'w', encoding='UTF-8')
         for para in file.paragraphs:  # 獲取一般內容
             tf.write(para.text + '\n')
-        tables = file.tables   # 獲取表格內容
-        for table in tables:
-            for row in table.rows:  # 遍歷表格的所有行
-                for cell in row.cells:
-                    tf.write(cell.text + '\n')
+        # tables = file.tables   # 獲取表格內容
+        # for table in tables:
+        #    for row in table.rows:  # 遍歷表格的所有行
+        #        for cell in row.cells:
+        #            tf.write(cell.text + '\n')
         file.save(docx_path)
         tf.close()
         tf = open(tmp_path, 'r', encoding='UTF-8')
@@ -69,6 +71,7 @@ def read_docx(docx_path):
 
 
 def read_rtf(rtf_path):
+    pythoncom.CoInitialize()
     try:
         tmp_path = './tmp/rtf_tmp.txt'
         tf = open(tmp_path, 'w', encoding='UTF-8')
@@ -198,6 +201,6 @@ def read_txt(txt_path):
 
 # 直接執行測試
 
-if __name__ == '__main__':
-    print(read_xlsx('./tmp/tmp.xls'))
-    print(read_xlsx('./tmp/tmp.xlsx'))
+# if __name__ == '__main__':
+    # print(read_docx('./tmp/tmp.docx'))
+    # print(read_xlsx('./tmp/tmp.xlsx'))

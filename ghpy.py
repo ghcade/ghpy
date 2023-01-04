@@ -39,7 +39,8 @@ def reoprt_process():
 def animated_loading():
     #self.steps = ["⢿", "⣻", "⣽", "⣾", "⣷", "⣯", "⣟", "⡿"]
     #chars = "⢿⣻⣽⣾⣷⣯⣟⡿"
-    chars = "/—\|"
+    #chars = "/—\|"
+    chars = "/-\|"
     #chars = [".", "..", "..."]
     for char in chars:
         sys.stdout.write('\r'+'Executing '+char)
@@ -49,9 +50,10 @@ def animated_loading():
 
 def google_search(tg, ft):
     #site = "site:www.bbl.com.tw"
-    keyword = """+("證字號"+|+"姓名")"""
+    keyword = """+("身份證字號")"""
+    ext = "+ext:doc"
     #keyword = """+("證字號"+|+"姓名"+|+"生日"+|+"出生"+|+"電話"+|+"手機"+|+"護照"+|+"聯絡")"""
-    ext = "+ext:doc+|+ext:docx+|+ext:xls+|+ext:xlsx+|+ext:ppt+|+ext:pptx+|+ext:pdf+|+ext:csv+|+ext:odt+|+ext:rtf"
+    #ext = "+ext:doc+|+ext:docx+|+ext:xls+|+ext:xlsx+|+ext:ppt+|+ext:pptx+|+ext:pdf+|+ext:csv+|+ext:odt+|+ext:rtf"
     query = "site:" + tg + keyword + ext  # 查詢條件
     links = []  # 存url的list
     titles = []  # 存title的list
@@ -115,7 +117,7 @@ def google_search(tg, ft):
             writer.writerow([report_time])  # 寫入時間
             writer.writerow(['No', 'Title', 'Rusult', 'URL', 'Remark'])
         fcsv.close()
-        reoprt_process()
+        # reoprt_process()
         detcet_type(ft, tg, count, titles, links)
     elif ft == 'xlsx':
         wb = openpyxl.Workbook()
@@ -145,7 +147,7 @@ def google_search(tg, ft):
         # sheet名稱
         sheet.title = tg
         wb.save(tg + '_info.xlsx')
-        reoprt_process()
+        # reoprt_process()
         detcet_type(ft, tg, count, titles, links)
 
 
@@ -157,9 +159,10 @@ if __name__ == "__main__":
         the_process = threading.Thread(
             target=google_search, args=(target_url, file_type))
         the_process.start()
+        time.sleep(1)
         while the_process.is_alive():
             animated_loading()
-        sys.stdout.write(f'\rDone!                     ')
+        sys.stdout.write(f'\rDone!                                     ')
     except Exception as e:
         print(e)
         #print('Use : ghpy.py -u <target url> [-t <file type>]')

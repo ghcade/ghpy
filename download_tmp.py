@@ -9,6 +9,7 @@ import io
 import os
 import sys
 import time
+import pythoncom
 
 
 def info_write(file_type, target, search_rusult, numbur, title, url):
@@ -72,6 +73,7 @@ def detcet_type(file_type, target, count, titles, links):
             info_write(file_type, target, search_rusult, i,
                        title_to_string, url_to_string)
         elif ext == "doc":
+            pythoncom.CoInitialize()
             store_path = './tmp/tmp.' + ext
             with open(store_path, mode="wb") as f:
                 f.write(bytes_io.getvalue())
@@ -121,6 +123,7 @@ def detcet_type(file_type, target, count, titles, links):
             info_write(file_type, target, search_rusult, i,
                        title_to_string, url_to_string)
         elif ext == "ppt":
+            pythoncom.CoInitialize()
             store_path = './tmp/tmp.' + ext
             with open(store_path, mode="wb") as f:
                 f.write(bytes_io.getvalue())
@@ -153,3 +156,10 @@ def detcet_type(file_type, target, count, titles, links):
             info_write(file_type, target, search_rusult, i,
                        title_to_string, url_to_string)
         time.sleep(1)
+
+
+# if __name__ == '__main__':
+    # detcet_type('doc', 'www.nmes.tp.edu.tw', 1, '臺北市中正區南門國民小學102學年度第1學期第1次代理教師甄選報名表',
+    #            'http://www.nmes.tp.edu.tw/enable/uploads/27/1020802.doc')
+    # detcet_type('doc', 'www.nmes.tp.edu.tw', 1, '臺北市中正區南門國民小學102學年度第1學期第1次代理教師甄選報名表',
+    #            'http://www.nmes.tp.edu.tw/enable/uploads/27/1020802.doc')
