@@ -24,7 +24,7 @@ def deley_process(page):
         sys.stdout.flush()
     print('\rPage {} , Google search finished!                                   '.format(page))
     print('\r')
-    time.sleep(1)
+    time.sleep(2)
 
 
 def reoprt_process():
@@ -49,7 +49,8 @@ def animated_loading():
 
 def google_search(tg, ft):
     #site = "site:www.bbl.com.tw"
-    keyword = """+("證字號"+|+"姓名"+|+"生日"+|+"出生"+|+"電話"+|+"手機"+|+"護照"+|+"聯絡")"""
+    keyword = """+("證字號"+|+"姓名")"""
+    #keyword = """+("證字號"+|+"姓名"+|+"生日"+|+"出生"+|+"電話"+|+"手機"+|+"護照"+|+"聯絡")"""
     ext = "+ext:doc+|+ext:docx+|+ext:xls+|+ext:xlsx+|+ext:ppt+|+ext:pptx+|+ext:pdf+|+ext:csv+|+ext:odt+|+ext:rtf"
     query = "site:" + tg + keyword + ext  # 查詢條件
     links = []  # 存url的list
@@ -64,9 +65,9 @@ def google_search(tg, ft):
     while end == 0:
         user_agent = random.choice(header_list)  # 隨機user_agent
         chrome_options = Options()
-        chrome_options.binary_location = "C:\Program Files\Google\Chrome\Application\chrome.exe" # chrome 位置
-        # chrome_options.add_argument("--headless")  # 隱藏視窗
-        chrome_options.add_argument('--incognito')  # 使用無痕視窗
+        chrome_options.binary_location = "C:\Program Files\Google\Chrome\Application\chrome.exe"  # chrome 位置
+        chrome_options.add_argument("--headless")  # 隱藏視窗
+        # chrome_options.add_argument('--incognito')  # 使用無痕視窗
         chrome_options.add_argument(f'user-agent={user_agent}')
         chrome_options.add_experimental_option(
             'excludeSwitches', ['enable-logging'])  # 隱藏chrome在command的log
@@ -99,9 +100,9 @@ def google_search(tg, ft):
                             pass
                         count += 1  # 總數
                         check_rusult_flag += 1  # 搜尋結果
+                    deley_process(page)
                     page += 1
                     # time.sleep(random.randint(10, 25))  # 時間延遲
-                    deley_process(page)
                     break
             if check_rusult_flag == 0:
                 end = 1
