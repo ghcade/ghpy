@@ -48,8 +48,9 @@ pip install lxml-4.9.0-cp311-cp311-win_amd64.whl
 WARNING: The script xxx.exe is installed in 'C:\Users\XXXX\AppData\Roaming\Python\Python311\Scripts' which is not on PATH.
 ```
 [3] 環境所需軟體/套件在 software
+[4] google 驗證問題 : ghpy_ap.py 自動切換 proxy   
+```
+python ghpy_ap.py -u <目表Host/IP> -t <輸出檔案格式>
+```
 ## 問題
-搜尋結果太多筆會有驗證問題  
-目前解決方法：  
-程式遇到驗證機制時會提示在第幾頁，主程式 ghpy.py 中的 page 參數設置搜尋起始頁數。  
-更換IP後，重新執行主程式。 
+ghpy_ap.py 自動切換 proxy 版本使用 Free Proxy 幾乎都會被阻擋.  
