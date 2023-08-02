@@ -50,7 +50,7 @@ WARNING: The script xxx.exe is installed in 'C:\Users\XXXX\AppData\Roaming\Pytho
 [3] 環境所需軟體/套件在 software  
 [4] google 驗證問題 : ghpy_ap.py 自動切換 proxy   
 ```
-python ghpy_ap.py -u <目表Host/IP> -t <輸出檔案格式>
+python ghpy_ap.py -u <目標Host/IP> -t <輸出檔案格式>
 ```
 ## 問題
 ghpy_ap.py 自動切換 proxy 版本使用 Free Proxy 幾乎都會被阻擋.  
